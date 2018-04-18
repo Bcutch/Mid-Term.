@@ -1,0 +1,73 @@
+package com.company;
+
+import java.io.*;
+//import java.io.FileNotFoundException;
+import java.util.*;
+
+public class Main {
+
+    private static int MAXDATA = 30;
+    private static int INVALID = -1;
+
+
+    public static void main(String[] args) {
+
+        int Data[] = new int [MAXDATA];
+
+        String userFile;
+        int count = 0;
+
+        System.out.println("");
+        System.out.println("Please type in the file name\n");
+
+        Scanner fileInput = new Scanner(System.in);
+        userFile = fileInput.next();
+
+        System.out.println();
+        System.out.println("------------------------------");
+
+        try{
+            File fileName = new File(userFile);
+            Scanner fileRead = new Scanner(fileName);
+            boolean fileDone = false;
+
+            while (!fileDone) {
+                if (fileRead.hasNext()) {
+                    Data[count] = fileRead.nextInt();
+                    count++;
+                }
+                else {
+                    fileDone = true;
+                }
+            }
+        }
+        catch (FileNotFoundException e) {
+            System.out.print(e);
+            e.printStackTrace();
+        }
+
+        /*for (int i = 0; i < count; i++) {
+            for (int j = 0; j < count; j++) {
+                if (i != j) {
+                    if (Data [i] == Data [j]) {
+                        Data [j] = INVALID;
+                    }
+                }
+            }
+        }*/
+
+
+        Arrays.sort(Data);
+
+        System.out.println();
+
+        for (int i = 0; i < count; i++) {
+            System.out.print(Data[i] + " ");
+        }
+        System.out.println();
+
+        // Sort the Array
+        // loop over array
+        // if value at position n = value at position n-1 then skip it
+    }//end method
+}//end class
