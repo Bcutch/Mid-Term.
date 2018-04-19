@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Main {
 
-    private static int MAXDATA = 30;
+    private static int MAXDATA = 26;
     private static int INVALID = -1;
 
 
