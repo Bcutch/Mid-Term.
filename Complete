@@ -7,6 +7,7 @@ import java.util.concurrent.SynchronousQueue;
 public class Main {
 
     public static void main(String[] args) {
+        
         int MAXDATA = 25;
         int count = 0;
         boolean fileDone = false;
@@ -14,10 +15,12 @@ public class Main {
         int myInt[] = new int[MAXDATA];
 
         try {
+
             File readFile = new File("i.txt");
             Scanner scanFile = new Scanner(readFile);
 
             while (!fileDone){
+
                 if (scanFile.hasNext()) {
                     myInt[count] = scanFile.nextInt();
                     count++;
@@ -34,7 +37,9 @@ public class Main {
 
 
         System.out.println("Printed Array");
+
         for (int i = 0; i < MAXDATA; i++) {
+
             System.out.print(myInt[i] + " ");
         }
 
@@ -45,7 +50,9 @@ public class Main {
         Arrays.sort(myInt);
 
         System.out.println("Sorted Array");
+
         for (int i = 0; i < MAXDATA; i++) {
+
             System.out.print(myInt[i] + " ");
         }
 
@@ -56,6 +63,7 @@ public class Main {
         int addition = 0;
 
         for (int i = 0; i < 5; i++) {
+
             addition += myInt[i];
         }
 
@@ -65,6 +73,7 @@ public class Main {
         int count2 = 0;
 
         for (int i = 1; i < MAXDATA; i++) {
+
             if (myInt[i] == myInt[i - 1] && myInt[i] != myInt[i + 1]) {
                 duplicate[count2] = myInt[i];
                 count2++;
@@ -76,6 +85,7 @@ public class Main {
         System.out.println("Duplicates:");
 
         for (int i = 0; i < count2; i++) {
+
             System.out.print(duplicate[i] + " ");
         }
 
@@ -85,11 +95,14 @@ public class Main {
 
         fileDone = false;
         try {
+
             File stringFile = new File("s.txt");
             Scanner scanString = new Scanner(stringFile);
 
             count = 0;
+
             while (!fileDone){
+
                 if (scanString.hasNext()) {
                     myStrings[count] = scanString.next();
                     count++;
@@ -112,10 +125,13 @@ public class Main {
 
         int println = 0;
         int i = 0;
+
         while (i < count) {
+
             System.out.print(myStrings[i] + " ");
             i++;
             println++;
+
             if (println == 25) {
                 System.out.println();
             }
@@ -130,14 +146,18 @@ public class Main {
         println = 0;
 
         while (r > -1) {
+
             System.out.print(myStrings[r] + " ");
             r--;
             println++;
+
             if (println == 25) {
                 System.out.println();
             }
         }
 
+        System.out.println();
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
     }//end method
 }//end class
